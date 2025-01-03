@@ -1,19 +1,7 @@
-plugins {
-    id("java")
-}
-
-group = "com.nookure.sync"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-}
-
-tasks.test {
-    useJUnitPlatform()
+  compileOnlyApi(libs.config.lib.core)
+  compileOnlyApi(libs.config.lib.yaml)
+  compileOnlyApi(libs.netty)
+  testImplementation(libs.config.lib.core)
+  testImplementation(libs.config.lib.yaml)
 }

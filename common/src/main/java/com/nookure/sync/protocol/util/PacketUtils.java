@@ -11,6 +11,15 @@ import java.util.UUID;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.nookure.sync.protocol.util.NettyPreconditions.checkFrame;
 
+/**
+ * Utility class for reading and writing packets.
+ * <p>
+ *   The methods in this class are optimized for performance and are safe to use in a Netty pipeline.
+ * </p>
+ * <p>
+ *   extracted from <a href="https://github.com/PaperMC/Velocity/blob/dev/3.0.0/proxy/src/main/java/com/velocitypowered/proxy/protocol/ProtocolUtils.java">velocity</a>
+ * </p>
+ */
 public class PacketUtils {
   public static final int DEFAULT_MAX_STRING_SIZE = 65536; // 64KiB
   private static final int MAXIMUM_VARINT_SIZE = 5;

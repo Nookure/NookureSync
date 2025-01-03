@@ -26,6 +26,7 @@ allprojects {
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation("org.jetbrains:annotations:26.0.1")
   }
 
   tasks {

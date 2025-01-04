@@ -19,6 +19,7 @@ allprojects {
 
   dependencies {
     compileOnly(rootProject.libs.guice)
+    compileOnly(rootProject.libs.guice.assistedinject)
     compileOnly(rootProject.libs.google.auto.value.annotations)
     annotationProcessor(rootProject.libs.google.auto.value.processor)
     compileOnly(rootProject.libs.google.auto.service.annotations)

@@ -10,6 +10,7 @@ slf4j = "2.0.16"
 [libraries]
 netty = { module = "io.netty:netty-all", version.ref = "netty" }
 guice = { module = "com.google.inject:guice", version.ref = "google-guice" }
+guice-assistedinject = { module = "com.google.inject.extensions:guice-assistedinject", version.ref = "google-guice" }
 google-auto-service = { module = "com.google.auto.service:auto-service", version.ref = "google-auto-service" }
 google-auto-service-annotations = { module = "com.google.auto.service:auto-service-annotations", version.ref = "google-auto-service" }
 google-auto-value-processor = { module = "com.google.auto.value:auto-value", version.ref = "google-auto-value" }

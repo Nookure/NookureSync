@@ -1,5 +1,6 @@
 package com.nookure.sync.client.config;
 
+import com.nookure.sync.config.ConfigurationContainer;
 import de.exlll.configlib.Comment;
 import de.exlll.configlib.Configuration;
 import org.junit.jupiter.api.Test;

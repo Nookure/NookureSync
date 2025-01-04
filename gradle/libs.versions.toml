@@ -6,6 +6,7 @@ google-auto-service = "1.0.1"
 config-lib = "4.5.0"
 log4j = "2.24.3"
 slf4j = "2.0.16"
+bouncy-castle = "1.79"
 
 [libraries]
 netty = { module = "io.netty:netty-all", version.ref = "netty" }
@@ -22,3 +23,4 @@ log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "lo
 log4j-slf4j-impl = { module = "org.apache.logging.log4j:log4j-slf4j2-impl", version.ref = "log4j" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 jzlib = "com.jcraft:jzlib:1.1.3"
+bouncy-castle-pkix = { module = "org.bouncycastle:bcpkix-jdk18on", version.ref = "bouncy-castle" }

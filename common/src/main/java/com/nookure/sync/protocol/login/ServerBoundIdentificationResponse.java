@@ -12,6 +12,17 @@ public class ServerBoundIdentificationResponse implements Packet {
   private UUID serverId;
   private String serverName;
 
+  public ServerBoundIdentificationResponse() {
+  }
+
+  public ServerBoundIdentificationResponse(
+      @NotNull final UUID serverId,
+      @NotNull final String serverName
+  ) {
+    this.serverId = serverId;
+    this.serverName = serverName;
+  }
+
   @Override
   public void decode(@NotNull ByteBuf buf, @NotNull PacketDirection direction) {
     serverId = PacketUtils.readUuid(buf);
@@ -22,5 +33,13 @@ public class ServerBoundIdentificationResponse implements Packet {
   public void encode(@NotNull ByteBuf buf, @NotNull PacketDirection direction) {
     PacketUtils.writeUuid(buf, serverId);
     PacketUtils.writeString(buf, serverName);
+  }
+
+  public UUID serverId() {
+    return serverId;
+  }
+
+  public String serverName() {
+    return serverName;
   }
 }

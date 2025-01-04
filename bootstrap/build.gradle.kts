@@ -20,4 +20,7 @@ dependencies {
 
     // Network
     implementation(libs.jzlib)
+
+    // SSL
+    implementation(libs.bouncy.castle.pkix)
 }

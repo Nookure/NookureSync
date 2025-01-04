@@ -1,7 +1,5 @@
-package com.nookure.sync;
+package com.nookure.sync.protocol;
 
-import com.nookure.sync.protocol.Connection;
-import com.nookure.sync.protocol.Packet;
 import org.jetbrains.annotations.NotNull;
 
 public class PacketEvent<P extends Packet> {

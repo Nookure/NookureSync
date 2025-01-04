@@ -1,4 +1,4 @@
-package com.nookure.sync.config;
+package com.nookure.sync.client.config;
 
 import de.exlll.configlib.Comment;
 import de.exlll.configlib.Configuration;

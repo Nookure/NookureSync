@@ -1,4 +1,4 @@
-package com.nookure.sync.config;
+package com.nookure.sync.client.config;
 
 import de.exlll.configlib.NameFormatters;
 import de.exlll.configlib.YamlConfigurationProperties;

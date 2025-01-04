@@ -24,5 +24,10 @@
             <AppenderRef ref="Console" />
             <AppenderRef ref="RollingFile" />
         </Logger>
+
+        <Logger name="com.nookure.sync" level="${sys:nookure.logLevel:-info}" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="RollingFile" />
+        </Logger>
     </Loggers>
 </Configuration>

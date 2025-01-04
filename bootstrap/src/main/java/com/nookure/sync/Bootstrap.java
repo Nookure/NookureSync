@@ -2,8 +2,9 @@ package com.nookure.sync;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.nookure.sync.config.Config;
-import com.nookure.sync.config.ConfigurationContainer;
+import com.nookure.sync.server.config.Config;
+import com.nookure.sync.client.config.ConfigurationContainer;
+import com.nookure.sync.server.SyncServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -17,6 +17,8 @@ import io.netty.handler.codec.compression.JdkZlibDecoder;
 import io.netty.handler.codec.compression.ZlibWrapper;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
+import io.netty.handler.ssl.SslProvider;
+import io.netty.handler.ssl.SupportedCipherSuiteFilter;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -114,6 +116,9 @@ public class SyncServer {
 
     return SslContextBuilder.forServer(serverCert, serverKey)
         .trustManager(trustCert)
+        .protocols("TLSv1.3", "TLSv1.2")
+        .sslProvider(SslProvider.OPENSSL)
+        .ciphers(null, SupportedCipherSuiteFilter.INSTANCE)
         .build();
   }
 }

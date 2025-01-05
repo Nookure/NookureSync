@@ -1,5 +1,6 @@
 plugins {
-    id("com.gradleup.shadow") version "9.0.0-beta4"
+    alias(libs.plugins.shadow)
+    alias(libs.plugins.graalvm)
 }
 
 dependencies {
@@ -20,7 +21,42 @@ dependencies {
 
     // Network
     implementation(libs.jzlib)
+    implementation(libs.netty)
 
     // SSL
     implementation(libs.bouncy.castle.pkix)
+    implementation(libs.netty.tcnative.boringssl.static)
+    implementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:windows-x86_64")
+    implementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:linux-x86_64")
+    implementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:linux-aarch_64")
+    implementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:osx-x86_64")
+    implementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:osx-aarch_64")
+}
+
+tasks.jar {
+    manifest {
+        attributes(
+            "Main-Class" to "com.nookure.sync.Boostrap"
+        )
+    }
+}
+
+tasks.shadowJar {
+    manifest {
+        attributes(
+            "Main-Class" to "com.nookure.sync.Bootstrap"
+        )
+    }
+
+    archiveFileName.set("nookure-sync-boot-${rootProject.version}.jar")
+}
+
+graalvmNative {
+    binaries {
+        named("main") {
+            imageName.set("nookure-sync-boot")
+            mainClass.set("com.nookure.sync.Bootstrap")
+            buildArgs("-04")
+        }
+    }
 }

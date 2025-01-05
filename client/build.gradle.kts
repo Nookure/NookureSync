@@ -4,7 +4,7 @@ dependencies {
   api(libs.slf4j.api)
   implementation(project(":common"))
 
-  testImplementation(libs.netty)
+  testImplementation(libs.bundles.netty)
   testImplementation(libs.config.lib.yaml)
   testImplementation(libs.slf4j.api)
   testImplementation(libs.guice)
@@ -15,4 +15,11 @@ dependencies {
   testImplementation(libs.log4j.slf4j.impl)
   testImplementation(libs.bouncy.castle.pkix)
   testImplementation(project(":common"))
+  testImplementation(libs.bouncy.castle.pkix)
+  testImplementation(libs.netty.tcnative.boringssl.static)
+  testImplementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:windows-x86_64")
+  testImplementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:linux-x86_64")
+  testImplementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:linux-aarch_64")
+  testImplementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:osx-x86_64")
+  testImplementation("${libs.netty.tcnative.boringssl.static.get().module}:${libs.netty.tcnative.boringssl.static.get().version}:osx-aarch_64")
 }
